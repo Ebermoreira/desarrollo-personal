@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    background-color: #f7f8f9;
+}
+/* todo:estilos para la barra de scroll unicamente se vera en navegadores como chrome,opera etc */
+ 
+  body::-webkit-scrollbar {
+    width: 9px;
+  }
+  /* ?sirve para definir la anchura del scroll */
+  
+  
+  body::-webkit-scrollbar-track {
+    background-color: #505057;
+  }
+  /* ?sirve para dar color de fondo a la barra */
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #FFB84C;
+  }
+  /* ?define el color del boton de desplazamiento */
+
+ body::-webkit-scrollbar-thumb:hover {
+    background-color: #e7a138;
+    
+  }
+/* ?cambia color de la barra al pasar el cursor encima */
+
+/* ? fin de estilos para la barra de scroll */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+.contenedor-textos{
+    width: 100%;
+    height: 100vh;
+    grid-column: 1/7;
+    background-color: black;
+    color: #e0b779;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.texto-titulo{
+    line-height: 5.5rem;
+    font-size: 5rem;
+    background-color: black;
+    color: #e0b779;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+}
+.caja{
+    width: 80%;
+    transform: translateX(-5%) translateY(5%);
+}
+ p{
+    color: aliceblue;
+    width: 100%;
+
+    
+}
+
+h1{
+    line-height: 4rem;
+    letter-spacing: 2px;
+    width: 90%;
+    text-transform: uppercase;
+}
+.fondo-foto{
+    width: 25vw;
+    height: 60vh; 
+    grid-column: 9/12;
+    transform: translatey(42%);
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+
+    )
+    ,url('../img/cuenca.jpg');
+
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;   
+    color: aliceblue; 
+}
+
+h2{
+    line-height: 4rem;
+    letter-spacing: 2px;
+    width: 100%;
+    text-transform: uppercase;
+    margin-left: 15px;
+}
+form{
+   transform: translateX(20%);
+   padding: 15px 0;
+}
+input{
+    width: 100%;
+    display: flex;
+    max-width: 250px;
+    padding: 15px 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    text-align: center;
+    padding: 15px 0;
+    
+}
+
+input::placeholder{
+    color: #505057;
+    font-size: 15px;
+    font-style: italic;
+    
+}
+
+input:hover{
+    background-color: antiquewhite;
+    transition: all 250ms linear;
+}
+.enlaces{
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+    background-color: #FFB84C;
+    padding: 5px 0;
+    border-radius: 15px;
+    width: 50%;
+    max-width: 250px;
+    display: inline-block;
+    
+}
+a:hover{
+    background-color: #de9f42;
+    transition: all 250ms linear;
+}

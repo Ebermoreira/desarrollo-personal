@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+/*? estilos basicos */
+
+*::selection {
+    background-color: #ffcc00; /* *Cambia el color de fondo */
+    color: #ffffff; /* *Cambia el color del texto */
+}
+/* ?estilos para cuando se copie texto */
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    background-color:  rgb(229, 238, 246);
+}
+/* todo:estilos para la barra de scroll unicamente se vera en navegadores como chrome,opera etc */
+ 
+  body::-webkit-scrollbar {
+    width: 9px;
+  }
+  /* ?sirve para definir la anchura del scroll */
+  
+  
+  body::-webkit-scrollbar-track {
+    background-color: #505057;
+  }
+  /* ?sirve para dar color de fondo a la barra */
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #FFB84C;
+  }
+  /* ?define el color del boton de desplazamiento */
+
+ body::-webkit-scrollbar-thumb:hover {
+    background-color: #e7a138;
+    
+  }
+/* ?cambia color de la barra al pasar el cursor encima */
+
+/* ? fin de estilos para la barra de scroll */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+/* !maquetado con grid */
+.cabecera{
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.6)
+    )
+    ,url('../img/fondo-nav.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* !imagen y barra de navegacion */
+.logo  {
+    grid-column: 1/1;
+}
+.logo  img {
+    width: 50%;
+    min-width: auto;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 250ms linear;
+}
+.logo > img:hover{
+    filter: drop-shadow(0 0 5px #FFB84C);
+}
+.barra-de-nav{
+    grid-column: 6/14;
+    width: 100%;
+    
+}
+.elemento-lista {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(50%);
+    list-style: none;
+    font-size: 14pt;
+    
+}
+.elemento-lista > li {
+    padding: 0 0.5rem;
+}
+.elemento-lista li a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: aliceblue;
+    
+}
+.elemento-lista li:hover{
+    transform: scale(1.1);
+   
+    transition: all 200ms linear;
+}
+.elemento-lista li a:hover{
+    color: #e7a138;
+    text-shadow: 0 0 15px #FFB84C;
+    transition: all 200ms linear;
+}
+
+.sub-menu{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.5)
+    )
+    ,url('../img/fondo-nav.webp');
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: translateY(15px) translateX(8%);
+    text-align: center;
+    
+    
+}
+.elemento-lista li:hover .sub-menu{  
+  opacity: 1;
+  transition: all 900ms linear;
+} 
+
+.sub-menu li{
+  padding: 1.3rem;
+  list-style: none;
+ 
+}
+.sub-menu li:hover{
+    transform: scale(1.1);
+    transition: all 250ms linear;
+}
+
+
+
+
+.texto-titulo {
+    margin: 20px 0;
+    font-size: 2.2rem;
+    color: brown;
+    text-transform: uppercase;
+}
+.texto-parrafo{
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+    color: gray;
+    
+}
+.inicio::first-letter{
+    font-size: 2.5rem;
+    color: #FFB84C;
+    margin: 0 5px 0 0;
+}
+
+.textos-seccion1{
+    grid-column: 2/11;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.textos-seccion2{
+  grid-column: 3/12;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.seccion-lista{
+  width: 100%;
+  height: 55vh;
+  transform: translateY(-10%) translateX(17%);
+}
+.elemento-listaol {
+ 
+  display: inline-block;
+}
+.elemento-listaol li{
+  padding: 10px 0;
+  width: 100%;
+  
+}
+.elemento-listaol li:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  color: #ffcc00;
+  transition: all 250ms linear;
+}
+.contenedor-img{
+    grid-column: 12/13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-img  img{
+    border-radius: 25px;
+    width: 100%;
+    min-width: 450px;
+    cursor: pointer;
+}
+.contenedor-img img:hover{
+    box-shadow: 0 0 25px #FFB84C;
+    transition: all 250ms linear;
+}
+
+
+/* !estilos para las tarjetas */
+
+main{
+  width: 100%;
+ height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 23rem;
+}
+.card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin-bottom: 25px;
+  cursor: pointer;
+ 
+}
+
+.card .card-landing{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 10px #000;
+  background-position:center ;
+  background-size: cover;
+  z-index: 100;
+  border-radius:25px ;
+}
+
+.foto1{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/pollo-con-ensalada-mejora.jpg');
+  
+}
+.foto2{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/pescado-a-la-parrila.jpg');
+}
+.foto3{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/receta-de-asado-de-carne.jpg');
+}
+.foto4{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/sopa-de-pollo.jpg');
+}
+.foto5{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/espaguetiss-con-pollo.jpg');
+}
+.foto6{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/arroz-con-pollo-y-salchichas.webp');
+}
+.foto7{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/carne-con-ensalada-mejora.jpeg');
+}
+.foto8{
+  background-image:linear-gradient(
+    transparent 50%, #000
+  )
+  ,url('../img/pollo-asado-mejora.jpg');
+}
+.card .card-landing h4{
+     position: absolute;
+     bottom: 10px;
+     left: 10px;
+     font-size: 25px;
+     color: #fff;
+}
+
+.card .card-info{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  padding: 15px;
+  background-color: rgb(171, 20, 20);
+  color: aliceblue;
+  z-index: 90;
+  border-radius:25px ;
+}
+
+.card:hover .card-info{
+  left: 100%;
+  box-shadow: 0 0  25px #e2a03b;
+  transition: all 0.6s linear;
+}
+
+.card-info .head{
+  padding: 5px 0;
+  border-bottom: solid 1px #ffcc00;
+}
+.card-info .head .title{
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 0 10px 0;
+  color: #FFB84C;
+}
+ .card-info .head .descripcion{
+  display: flex;
+  gap: 10px;
+}
+.card-info .head .descripcion .icono{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-info .head .descripcion .icono .item{
+  color: #FFB84C;
+}
+
+.card-info .head .descripcion .icono p{
+  font-size: 13px;
+}
+.card-info .content .list{
+  padding: 10px 15px;
+}
+
+.card-info .content .list li{
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.card-info .action .btn{
+  padding: 10px;
+  color: white;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  background-color: #FFB84C;
+  display: block;
+  border-radius:25px ;
+}
+
+.card-info .action .btn:hover{
+  background-color: #e2a03b;
+  transform: scale(1.1);
+  transition: all 250ms linear;
+}
+
+
+
+
+
+
+
+.contenedor-final {
+    background-color: rgb(239, 228, 214);
+    color: #333;
+    font-size: 14px;
+    padding: 20px;
+    width: 100%;
+    
+  }
+  .contenido-final{
+    grid-column: 2/13;
+  }
+  
+  .contenido-enlaces {
+    width: 100%;
+    height: 15vh;
+    grid-column: 2/13;
+    letter-spacing: 2px;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .contenido-final p{
+    font-size: x-small;
+  }
+  .link-final{
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #655959;
+}
+.link-final:hover{
+    color: #e7a138;
+    transform: scale(1.2);
+    border-bottom: 2px solid #e7a138;
+    transition: all 200ms linear;
+  }
+  .contenido-enlaces a{
+     padding: 0 2rem;
+     text-decoration: none;
+     text-transform: uppercase;
+     color: #000000;
+     font-weight: 700;
+     font-size: 1.2rem;
+     
+     display: inline-block;
+    }
+    .enlaces-finales a:hover{
+        transform: scale(1.5);
+        transition: all 200ms linear;
+    }
+  
+  .color-texto{
+    color: #FFB84C;
+    font-size: 2rem;
+
+  }
+  
+  
+  .color-face:hover {
+    color: #3b5998;
+    transition: all 200ms linear;
+  }
+  
+ 
+  .color-whats:hover {
+    color: #25d36c;
+    transition: all 200ms linear;
+  }
+  
+ 
+  .color-insta:hover {
+    color: #e1292c;
+    transition: all 200ms linear;
+  }
+  
+  
+  .color-git:hover {
+    color: #8a7a7a;
+    transition: all 200ms linear;
+  }
+  
+  .color-correo:hover {
+    color: #b6210e;
+    transition: all 200ms linear;
+  }
+ .enlaces-finales:hover .link-icono{
+    color: aliceblue;
+    transition: all 250ms linear;
+ }
+
+
+ @media screen and (max-width: 768px) {
+  .grid{
+      grid-template-columns: repeat(7,1fr);
+      grid-template-areas: "head head head" "b b b" "c c c";
+      
+  }
+
+  .logo {
+      height: 15vh;
+      grid-column: 4/4;
+      transform: translateY(5rem);
+  }
+  .logo img {
+      width: 10em;
+  }
+  .cabecera{
+      height: 100vh;
+  }
+  .barra-de-nav {
+      grid-column: 4 /7;
+
+      
+  }
+ 
+  
+  .elemento-lista {
+      height: 20vh;
+      row-gap: 10px;
+      gap: 20px;
+      flex-direction: column;  
+  }
+  .elemento-lista > li:hover{
+      transform: scale(1.1);
+      transition: all 250ms linear;
+  }
+  
+
+  .sub-menu {
+      width: 100%;
+      background-image: initial;
+      opacity: 1;
+      transform: translateY(0) translateX(-20%); 
+  }
+  .sub-menu li{
+  
+      padding: 3%;
+  }
+ 
+.seccion-flex{
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.textos-grid{
+  width: 70%;
+  height: auto;
+}
+
+figure img{
+  margin: 25px 0;
+}
+.contenido-enlaces{
+  grid-column: 2/7;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.card:hover .card-info{
+  left: 0;
+  top: 145%;
+  transition: all 0.9s linear;
+  
+ 
+}
+
+}
+@media screen and (max-width: 480px) {
+  .logo img {
+      width: 100%; /* Reducir aún más el tamaño del logo */
+  }
+
+  .texto-titulo {
+      font-size: 1.5rem; /* Disminuir el tamaño del título */
+  }
+
+  .texto-parrafo {
+      font-size: 1rem; /* Disminuir el tamaño del párrafo */
+  }
+
+  .contenedor-imagen img {
+      width: 80%; /* Reducir el tamaño de la imagen */
+  }
+  
+  .elemento-lista{
+      width: 100vw;
+      gap: 25px;
+  }
+  
+  .sub-menu{
+      margin-top: 15px;
+      width: 100vw;
+      transform: translateX(-35%);
+  }
+  .contenedor-imagen{
+     height: min-content;
+     
+  }
+  .contenedor-imagen img{
+      
+      width: 100%;
+      min-width: 250px;
+  }
+  .contenedor-importante{
+      grid-column: 2/7
+  }
+
+  .color-texto{
+      font-size: 1.5rem;
+  }
+  .contenedor-final{
+      height: 70vh;
+  }
+  figure img{
+    width: 100%;
+    max-width: 100px;
+
+  }
+  .pollo:hover .card-info{
+    
+    top: -195%;
+  }
+}
+@media screen and (max-width: 400px){
+  
+  .contenedor-final{
+      height: 100vh;
+  }
+  .contenido-enlaces{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      grid-column: 1/7;
+  }
+  .enlaces-finales {
+     padding: 15px;
+     grid-column: 1/7;
+  }
+  
+  
+}
